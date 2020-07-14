@@ -14,3 +14,15 @@ This API is designed to be light, fast and easy to integrate.
 to get this app in your desired folder.
 - type in terminal ``cd rate-service``
 - building sources ``mvn clean install`` from project root folder
+
+## Running App
+ ```
+docker run -d -p 3306:3306 --name my-mysql \
+      -v /Users/mslob/GitHub/IdeaProjects/rate-service/database/:/docker-entrypoint-initdb.d/ \
+      -e MYSQL_ROOT_PASSWORD=root \
+      -e MYSQL_USER=root \
+      -e MYSQL_PASSWORD=root \
+      -e MYSQL_DATABASE=rate_db \
+      mysql
+```
+- running app `java -Dfile.encoding=UTF-8 -jar ~/rate-service/target/rate-service-1.0-SNAPSHOT-jar-with-dependencies.jar run AppVerticle -conf configs/config.json`

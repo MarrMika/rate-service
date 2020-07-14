@@ -29,10 +29,5 @@ CREATE TABLE rates.exchangeRates (
     currencyId VARCHAR(32) NOT NULL,
     exchangeRate FLOAT NOT NULL,
     rateDate DATE NOT NULL,
-    PRIMARY KEY (`id`),
-    CONSTRAINT fk_has_currency
-    FOREIGN KEY (`currencyId`)
-    REFERENCES rates.currencies (`id`)
-    ON DELETE SET NULL
-    ON UPDATE CASCADE
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
