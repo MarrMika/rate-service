@@ -1,0 +1,10 @@
+{
+  "http.port": 8080,
+  "host": "localhost",
+  "port": 3306,
+  "database": "rate_db",
+  "driver_class": "com.mysql.cj.jdbc.Driver",
+  "username": "root",
+  "password": "qwerty123",
+  "max_pool_size": 10
+}

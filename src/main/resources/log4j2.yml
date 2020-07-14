@@ -1,0 +1,23 @@
+Configutation:
+  name: Default
+  Properties:
+    Property:
+      name: log-path
+      value: "log"
+  Appenders:
+    Console:
+      name: Console_Appender
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: "%d::%X{gtid} %-5p [%t] %c - %m%n"
+  Loggers:
+    Root:
+      level: ${env:ROOT_LOG_LEVEL:-warn}
+      AppenderRef:
+        - ref: Console_Appender
+    Logger:
+      - name: ./
+        additivity: false
+        level: ${env:LOG_LEVEL:-debug}
+        AppenderRef:
+          - ref: Console_Appender
