@@ -18,7 +18,7 @@ to get this app in your desired folder.
 ## Running App
  ```
 docker run -d -p 3306:3306 --name my-mysql \
-      -v /Users/mslob/GitHub/IdeaProjects/rate-service/database/:/docker-entrypoint-initdb.d/ \
+      -v ./database:/docker-entrypoint-initdb.d/ \
       -e MYSQL_ROOT_PASSWORD=root \
       -e MYSQL_USER=root \
       -e MYSQL_PASSWORD=root \
